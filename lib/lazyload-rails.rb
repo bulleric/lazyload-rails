@@ -34,7 +34,7 @@ end
 ActionView::Helpers::AssetTagHelper.module_eval do
   alias :x_image_tag :image_tag
 
-  def image_tag(*attrs)
+  def image_tag(*attrs, lazy=false)
     if !attrs.last.delete(:lazy)
       x_image_tag(*attrs)
     else
